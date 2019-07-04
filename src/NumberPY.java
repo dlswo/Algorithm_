@@ -16,7 +16,7 @@ public class NumberPY {
                 y++;
             }
         }
-        answer = p == y ?   true : false;
+        answer = p != y ?   false : true;
         System.out.println(answer);
     }
 }
