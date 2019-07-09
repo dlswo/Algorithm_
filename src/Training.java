@@ -11,17 +11,17 @@ public class Training {
 //
 //    전체 학생의 수 n, 체육복을 도난당한 학생들의 번호가 담긴 배열 lost, 여벌의 체육복을 가져온 학생들의 번호가 담긴 배열 reserve가 매개변수로 주어질 때, 체육수업을 들을 수 있는 학생의 최댓값을 return 하도록 solution 함수를 작성해주세요.
     public static void main(String[] args) {
-        int n = 6;
-        int[] lost = {1, 3, 4, 5};
-        int[] reserve = {1, 4};
+        int n = 5;
+        int[] lost = {1, 3, 5};
+        int[] reserve = {2, 4, 5};
         int answer = 0;
-        List<Integer> ListLost = Arrays.stream(lost).boxed().collect(Collectors.toList());
-        List<Integer> ListReserve = Arrays.stream(reserve).boxed().collect(Collectors.toList());
+        List<Object> ListLost = Arrays.stream(lost).boxed().collect(Collectors.toList());
+        List<Object> ListReserve = Arrays.stream(reserve).boxed().collect(Collectors.toList());
 
-        for(Iterator<Integer> iter = ListLost.iterator(); iter.hasNext(); ){
-            int Lost = iter.next();
-            for(Iterator<Integer> iter2 = ListReserve.iterator(); iter2.hasNext(); ){
-                int Reserve = iter2.next();
+        for(Iterator<Object> iter = ListLost.iterator(); iter.hasNext(); ){
+            int Lost = (int) iter.next();
+            for(Iterator<Object> iter2 = ListReserve.iterator(); iter2.hasNext(); ){
+                int Reserve = (int) iter2.next();
                 if(Lost == Reserve){
                     iter.remove();
                     iter2.remove();
@@ -30,10 +30,10 @@ public class Training {
             }
         }
 
-        for(Iterator<Integer> iter = ListLost.iterator(); iter.hasNext(); ){
-            int Lost = iter.next();
-            for(Iterator<Integer> iter2 = ListReserve.iterator(); iter2.hasNext(); ){
-                int Reserve = iter2.next();
+        for(Iterator<Object> iter = ListLost.iterator(); iter.hasNext(); ){
+            int Lost = (int) iter.next();
+            for(Iterator<Object> iter2 = ListReserve.iterator(); iter2.hasNext(); ){
+                int Reserve = (int) iter2.next();
                     if(Lost - 1 == Reserve){
                     iter.remove();
                     iter2.remove();
