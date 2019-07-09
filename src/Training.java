@@ -15,6 +15,7 @@ public class Training {
         int[] lost = {1, 3, 5};
         int[] reserve = {2, 4, 5};
         int answer = 0;
+        
         List<Object> ListLost = Arrays.stream(lost).boxed().collect(Collectors.toList());
         List<Object> ListReserve = Arrays.stream(reserve).boxed().collect(Collectors.toList());
 
