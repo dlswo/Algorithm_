@@ -9,9 +9,9 @@ public class IntDesc {
     public static void main(String[] args) {
         long n = 1183722121;
         long answer = 0;
-
         String str = n + "";
         String[] arr = str.split("");
+        
         Arrays.sort(arr, Collections.reverseOrder());
         String answerStr = "";
         for(int i = 0 ; i < arr.length; i++){
