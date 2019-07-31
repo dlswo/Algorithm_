@@ -1,7 +1,6 @@
 package level2;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.PriorityQueue;
 
 public class Spicy {
 	
@@ -17,27 +16,25 @@ public class Spicy {
 		int K = 7;
 		int answer = 0;
 		
-		// 섞은 음식의 지수 선언, ArrayList 선언
-		int target = 0;		
-		ArrayList<Integer> al = new ArrayList<>();
+		PriorityQueue<Integer> heap = new PriorityQueue();
 		
-		for(int i = 0 ; i < scoville.length; i++){
-			al.add(scoville[i]);
-		}
-		System.out.println(al + "--------");
-		
-		// 석은 음식의 지수가 K보다 높을때 까지 While을 돌린다
-		while(target < K){
-			Collections.sort(al);
-			target = al.remove(0) + (al.remove(0) * 2);
-			al.add(target);
-			if(al.size() == 1){
-				answer = -1;
-				break;
-			}
-			answer++;
-		}
-		System.out.println(al);
+		for (int aScoville : scoville) {
+            heap.offer(aScoville);
+        }
+		System.out.println(heap);
+        while (heap.peek() <= K) {
+            if (heap.size() == 1) {
+                answer = -1;
+            }
+            int a = heap.poll();
+            int b = heap.poll();
+
+            int result = a + (b * 2);
+
+            heap.offer(result);
+            answer ++;
+        }
+        
 		System.out.println(answer);
 	}
 
