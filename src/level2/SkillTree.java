@@ -1,9 +1,5 @@
 package level2;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class SkillTree {
 
 //	스킬트리
